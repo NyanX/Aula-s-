@@ -1,59 +1,42 @@
+package vendas;
 
-package biblioteca;
-
-public class Livro 
+public class Livro extends Produto implements Vendavel
 {
-    //Atributos da classe
- private String nome;
- private String autor;
- private String genero;
- private String editora;
+ private String Autor;
+ private String ISBN;
  
- 
+  public Livro (int Codigo, String Descricao, double Preco, String Autor, String ISBN)
+ {
+ super(Codigo, Descricao, Preco);
+ this.Autor = Autor;
+ this.ISBN = ISBN;
+ }
 
- public String getNome()
- {
- return nome;
- }
+    public String getAutor() {
+        return Autor;
+    }
+
+    public void setAutor(String Autor) {
+        this.Autor = Autor;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+    @Override
+     public String getDescricaoCompleta()
+     
+     {
+         return "Livro: " + super.getDescrição()+ "Autor: " + Autor + "ISBN: " + ISBN;
+     }
+     
+     public double getValorVenda()
+     {
+         return getPreco() * 2.2; 
+     }
  
- public void setNome(String n)
- {
-     nome = n;
- }
- 
- public String getAutor()
- {
- return autor;
- }
- 
- public void setAutor (String a)
- {
- autor = a;
- }
- 
- public String getGenero()
- {
- return genero;
- }
- 
- public void setGenero(String g)
- {
- genero = g;
- }
- 
- public String getEditora()
- {
- return editora;
- }
- 
- public void setEditora(String e)
- {
- editora = e;
- }
- {
- 
- }
 }
-
-
-
